@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>Pilihan Produk</title>
+	<style>
+		img{ height:90px !important;}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark text-light">
+	<div class="navbar">
+	<a class="btn btn-outline-light" href="index.html">&laquo;</a> 
+	<h2>&nbsp;Pilihan Produk</h2>
+	</div>
+</nav>
+<div class="container">	
+	<div class="row" id="produk">	
+	</div>
+</div>
+<script>
+	var isi = [
+				{"nama":"Soto","gambar":"soto.jpg", "harga":"15.000"},
+				{"nama":"Sate","gambar":"sate.jpg", "harga":"35.000" },
+				{"nama":"Nasi goreng","gambar":"nasi-goreng.jpeg", "harga":"10.000"},
+				{"nama":"Rendang","gambar":"rendang.jpg", "harga":"25.000"},
+				{"nama":"Pecel Tumpang","gambar":"peceltumpang.jpg", "harga":"5.000" },
+				{"nama":"mie goreng","gambar":"mie-goreng.jpg", "harga":"10.000"},
+			  ]
+	function list(){
+		var tampil = '';
+		for(var i=0;i<isi.length;i++){
+		tampil += '<div class="col-4 border p-3">'+
+				'<div><img class="img-fluid" src="img/'+isi[i].gambar+'"></div>'+
+				'<button class="btn btn-dark btn-block mt-2 round" onclick="lihat('+i+')">Lihat</button>'+
+			'</div>';
+		}
+		document.getElementById('produk').innerHTML = tampil;
+	}
+	function lihat(x){
+		alert(isi[x].nama+" Rp."+isi[x].harga);
+	}
+	list();
+</script>
+</body>
+</html>

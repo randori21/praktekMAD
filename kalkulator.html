@@ -1,0 +1,40 @@
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>Latihan Kalkulator</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark text-light">
+	<div class="navbar">
+	<a class="btn btn-outline-light" href="index.html">&laquo;</a> 
+	<h2>&nbsp;Kalkulator</h2>
+	</div>
+</nav>
+<div class="container">	
+	<div class="label">Angka 1</div>
+	<input class="form-control" type="text" id="angka1">
+	<div class="label">Angka 2</div>
+	<input class="form-control" type="text" id="angka2">
+	<button class="btn btn-dark btn-block mt-2 round" onclick="perkalian()">Kali</button>	
+	<button class="btn btn-danger btn-block mt-2 round" onclick="reset()">Reset</button>
+	<div class="text-center" id="hasil"></div>
+</div>
+<script>
+	function perkalian(){
+		var angka1 = document.getElementById("angka1").value;
+		var angka2 = document.getElementById("angka2").value;
+		var hasil = angka1 * angka2;
+		document.getElementById("hasil").innerText = hasil;
+		bersih();
+	}
+	function bersih(){
+		document.getElementById("angka1").value = "";
+		document.getElementById("angka2").value = "";
+	}
+	function reset(){
+		document.getElementById("hasil").innerText = "";
+	}
+</script>
+</body>
+</html>
